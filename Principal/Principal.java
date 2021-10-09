@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Main {
+public class Principal {
 	// Atributos de classe
 	private static Carro[] vagas = new Carro[100]; // o estacionamento tem 100 vagas numeradas de 0..99
 	private static ArrayList<Marca> marcas = new ArrayList<Marca>(); 
