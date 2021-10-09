@@ -79,7 +79,7 @@ public class Main {
 			case 1:
 				// Imprime os modelos ja cadastrados 
 				System.out.println("marcas e modelos cadastrados: ");
-				printEnumerado();
+				showNumerado();
 
 				System.out.println("Indique:\n<Numero> Marca\n<0> Cadastrar");
 				Scanner marcaScanner = new Scanner(System.in);
@@ -91,6 +91,7 @@ public class Main {
 						System.out.println("Entrada Invalida\nDigite novamente: ");
 					}
 				} while(posMarca > marcas.size() - 1);
+				
 				Marca marca;
 				if(posMarca < 0) {	 marca = cadastraMarca(); }
 				else { marca = marcas.get(posMarca); }
@@ -102,9 +103,9 @@ public class Main {
 				// breve verificação para validar a entrada e devolver o valor correto do veiculo para o cadastro
 				do {
 					posModelo = modeloScanner.nextInt() - 1;
-					if(posModelo > marca.getModelo().size() - 1) 
+					if(posModelo > marca.getModelo().size() - 1) {
 						System.out.println("Entrada invalida\nDigite novamente: ");
-					
+					}
 				} while(posModelo > marca.getModelo().size() - 1);
 				Modelo modelo;
 
@@ -127,9 +128,9 @@ public class Main {
 					
 				} while((vagaRemover >= 0) && (vagas[vagaRemover] == null));
 
-				if(vagaRemover >= 0)
+				if(vagaRemover >= 0) {
 					System.out.println("O valor a se pagar é de: R$ " + saidaCarro(vagaRemover));
-				
+				}
 				break;
 			case 3:
 				cadastraMarca();
@@ -137,9 +138,9 @@ public class Main {
 			case 4:
 				System.out.println("Escolha a Marca que o modelo pertence: ");
 				// mostra os nomes das marcas
-				for(int i = 0; i < marcas.size(); i++)
+				for(int i = 0; i < marcas.size(); i++) {
 					System.out.println(i+1 + "- " + marcas.get(i).getNome());
-				
+				}
 				Scanner mScanner = new Scanner(System.in);
 				cadastraModelo(marcas.get(mScanner.nextInt() - 1));
 				break;
@@ -157,7 +158,7 @@ public class Main {
 				showVagasOcupadas();
 				break;
 			case 7:
-				printNnumerado();
+				showNotnum();
 				break;
 			default:
 				System.out.println("Opcao inexistente!");;
@@ -168,7 +169,7 @@ public class Main {
 	}
 
 	// Imprime os modelos com indices para facilitar na escolha 
-	private static void printEnumerado(){
+	private static void showNumerado(){
 		for(int i = 0; i < marcas.size(); i++) {
 			System.out.printf("<%d> - %s\n", i+1, marcas.get(i).getNome());
 			for(int j = 0; j < marcas.get(i).getModelo().size(); j++) {
@@ -178,7 +179,7 @@ public class Main {
     }
 	
 	// Imprime os modelos de forma não numerada apenas para visualização
-	private static void printNnumerado(){
+	private static void showNotnum(){
 		for (Marca marca : marcas) {
 			System.out.println(marca.getNome());
 			for (Modelo modelo : marca.getModelo()) {
@@ -202,7 +203,7 @@ public class Main {
 			}
 		}
 		System.out.println("Cadastro realizado com Sucesso!!");
-		placaScanner.close();
+		//placaScanner.close();
 	}
 	
 	// Função que calcula o valor a se pagar pelo tempo no estacionamento
@@ -254,7 +255,7 @@ public class Main {
 			System.out.println("    cadastrado com sucesso!!");
 		} 
 
-		teclado.close();
+		// teclado.close();
 		return marca; // retorna a posição da marca cadastrada dentro do arrayList de marcas
 	}
 
@@ -272,7 +273,7 @@ public class Main {
 			marca.addModelo(modelo);
 		}
 
-		teclado.close();
+		// teclado.close();
 		return modelo; // retorna a posição do modelo dentra da marca no arrayList de marcas
 	}
 	
@@ -337,7 +338,7 @@ public class Main {
 																				carro.getValor());
 			}
 		}
-		teclado.close();
+		// teclado.close();
 	}
 
 	// Vagas atuais ocupadas

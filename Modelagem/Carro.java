@@ -1,4 +1,4 @@
-package ESTACIONAMENTO.Modelagem;
+package Modelagem;
 import java.time.LocalDateTime;
 
 public class Carro implements Comparable<Carro> {

@@ -1,4 +1,4 @@
-package ESTACIONAMENTO.Modelagem;
+package Modelagem;
 import java.util.ArrayList;
 
 public class Marca {
