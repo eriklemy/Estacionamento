@@ -7,6 +7,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
+/**
+ * @author Erick Lemmy dos Santos Oliveira
+ * Programação Orientada a Objetos (POO)
+ * Controle de Estacionamento
+ * @version 1.0
+ */
 public class Principal {
 	// Atributos de classe
 	private static Carro[] vagas = new Carro[100]; // o estacionamento tem 100 vagas numeradas de 0..99
